@@ -22,7 +22,7 @@ let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
 
-console.log("Hold status: " + holdStatus(cargoHold));
+
 
 // Steal some fuel from the shuttle:
 
@@ -60,6 +60,7 @@ let deckMops = function(array1){
 };
 console.log(deckMops(cargoHold));
 console.log(cargoHold);
+console.log("Hold status: " + holdStatus(cargoHold));
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
 
 //b). You need to swipe two items from the cargo hold. Choose well. Stealing water ain’t gonna get us rich. Put the swag into a new array and return it from the function.
@@ -73,6 +74,7 @@ console.log(cargoHold);
    let arr = deckMops(itemsInCargo);
    return `Raided ${nonSuspiciousFunction(fuelLevel)} kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
 }
+//console.log(irs(nonSuspiciousFunction(25000), cargoHold));
 
 console.log(irs(220000, ['satellite','gold']));
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
