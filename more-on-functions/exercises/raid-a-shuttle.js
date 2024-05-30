@@ -74,7 +74,7 @@ console.log(cargoHold);
    return `Raided ${nonSuspiciousFunction(fuelLevel)} kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
 }
 
-console.log(irs(220000, ['water','gold']));
+console.log(irs(220000, ['satellite','gold']));
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
 	
 //b). Call your anonymous fuel and cargo functions from within irs.
