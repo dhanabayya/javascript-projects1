@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
   const left = document.getElementById("left");
   const image = document.getElementById("rocket");
   image.style.position = "absolute";
-  image.style.bottom = "10px";
+  //image.style.bottom = "10px";
 
   takeoff.addEventListener("click", (event) => {
     let pop = confirm("Confirm that the shuttle is ready for takeoff");
@@ -38,7 +38,18 @@ window.addEventListener("load", () => {
       shuttleheight.innerHTML = 0;
     }
   });
-  // up.addEventListener("click", (event) => {
-  // flightdisplay.innerHTML = parseInt("10px");
-  // });
+  up.addEventListener("click", (event) => {
+    image.style.top = "10px";
+    shuttleheight.innerHTML = parseInt(shuttleheight.innerHTML) + 10000;
+  });
+  down.addEventListener("click", (event) => {
+    image.style.bottom = "10px";
+    shuttleheight.innerHTML = parseInt(shuttleheight.innerHTML) + 10000;
+  });
+  left.addEventListener("click", (event) => {
+    image.style.left = "10px";
+  });
+  right.addEventListener("click", (event) => {
+    image.style.right = "10px";
+  });
 });
