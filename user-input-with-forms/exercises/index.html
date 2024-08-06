@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Rocket Simulation</title>
     <style>
-      label { display: block; margin-bottom: 7px;}
+      label {
+        display: block;
+        margin-bottom: 7px;
+      }
     </style>
+    <script>
+      window.addEventListener("load", function () {
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function (event) {
+          let testNameInput = document.querySelector("input[name=testName]");
+          let testDate = document.querySelector("input[name=testDate]");
+          let rocketType = document.querySelector("select[name=rocketType]");
+          let rocketBoosterCount = document.querySelector(
+            "input[name=boosterCount]"
+          );
+          let windRating = document.querySelector("input[name=windrating]");
+          let gradeServers = document.querySelector("div.input[name]");
+          if (
+            testNameInput.value === "" ||
+            testDate.value === "" ||
+            rocketType.value === "" ||
+            rocketBoosterCount.value === "" ||
+            windRating.value === "" ||
+            gradeServers.value === ""
+          ) {
+            alert("All fields are required!");
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
   </head>
   <body>
+    <form
+      method="POST"
+      action="https://handlers.education.launchcode.org/request-parrot"
+    >
+      <label>Test Name <input type="text" name="testName" /></label>
+      <label>Test Date<input type="date" name="testDate" /></label>
+      <label
+        >Rocket Type:
+        <select name="rocketType">
+          <option value="">Brant</option>
+          <option value="1">Lynx</option>
+          <option value="2">Orion</option>
+          <option value="3">Terrier</option>
+        </select>
+      </label>
+      <label
+        >Number of Rocket Boosters
+        <input type="number" name="boosterCount" min="0" max="10" />
+      </label>
+      Wind Rating:
+      <label>No wind<input type="radio" name="windRating" value="0" /> </label>
+      <label>Mild<input type="radio" name="windRating" value="10" /></label>
+      <label>Strong<input type="radio" name="windRating" value="20" /></label>
+      <div>Use production grade servers</div>
+      <label>on<input type="checkbox" name="on" /></label>
+      <label>off<input type="checkbox" name="off" /></label>
+      <button>Run Simulation</button>
+    </form>
     <!-- TODO: add form here -->
   </body>
-  
 </html>
